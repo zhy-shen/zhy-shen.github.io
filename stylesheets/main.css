@@ -382,6 +382,7 @@ h1.name{
   color: rgba(0, 0, 0, 0.1);
   background: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, rgba(9, 9, 121, 0) 48%, rgba(255, 255, 255, 1) 50%, rgba(0, 212, 255, 0) 52%, rgba(0, 212, 255, 0) 90%);
   background-size: 600% 100%;
+  -webkit-background-clip: text;
   background-clip: text;
   animation: shimmer 5s infinite;
   background-repeat: no-repeat;
