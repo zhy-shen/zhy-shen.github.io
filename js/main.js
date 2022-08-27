@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let active = false;
 
   document.getElementById("list").onclick = function (evt) {
-    source = evt.secElement;
+    source = evt.srcElement;
 
     if (!content.classList.contains("panel-open")) {
       source.classList.add("active");
