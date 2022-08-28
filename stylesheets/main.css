@@ -309,7 +309,7 @@ img {
   }
 
 .warning .text {
-  width: min(100vw, 800px);
+  width: 100vw;
   height: 100px;
   display: grid;
   place-content: center;
