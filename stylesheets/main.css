@@ -377,7 +377,7 @@ img {
   }
 }
 
-h1.name{
+.panel-open  h1.name{
   text-align: center;
   color: rgba(0, 0, 0, 0.1);
   background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 28%, rgba(255,255,255,0.7) 30%, rgba(255,255,255,0) 32%, rgba(255,255,255,0) 52%, rgba(255,255,255,1) 55%, rgba(255,255,255,0) 58%, rgba(255,255,255,0) 100%);
