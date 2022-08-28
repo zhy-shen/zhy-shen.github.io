@@ -302,15 +302,15 @@ img {
 }
 
 .warning > h1 {
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 
 .warning .text {
   width: min(100vw, 800px);
-  height: 50px;
+  height: 100px;
   display: grid;
   place-content: center;
   overflow: hidden;
@@ -320,7 +320,7 @@ img {
 
 .warning .text h1 {
       width: 100%;
-      font-size: 1.2rem;
+      font-size: 2rem;
       overflow: hidden;
       margin: auto;
       position: absolute;
@@ -352,11 +352,11 @@ img {
       }
 
 .warning .text h1:nth-child(5) {
-        font-size: 0.95rem;
+        font-size: 2.7rem;
       }
 
 .warning .text h1:nth-child(6) {
-        font-size: 1rem;
+        font-size: 2.8rem;
       }
 
 @keyframes textSlide {
