@@ -53,13 +53,26 @@ ul {
     border-radius: 35px;
   }
 
+.header-elements.panel-open {
+    transition: transform 0.5s, filter 0.5s, background 0.2s;
+  }
+
 .header-elements.panel-open .header-inner {
       transform: translateX(-80%) rotateY(30deg);
+    }
+
+.header-elements.panel-open #list li {
+      
     }
 
 .header-elements:not(.panel-open) .header-inner {
       background: #ffffff30;
       padding: 40px;
+    }
+
+.header-elements:not(.panel-open) #list li {
+      transform: translateY(6px);
+      transition: transform 0.5s, filter 0.5s, background 0.2s;
     }
 
 .header-elements:not(.panel-open) #list li a {
@@ -85,14 +98,43 @@ ul {
     transition: transform 0.5s, filter 0.5s, background 0.2s;
     padding: 8px 15px;
     margin: 3px 0;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation-delay: 1s;
   }
+
+.header-elements #list li:first-child {
+      animation-name: bob-1;
+    }
+
+.header-elements #list li:nth-child(2) {
+      animation-name: bob-2;
+    }
+
+.header-elements #list li:nth-child(3) {
+      animation-name: bob-3;
+    }
+
+.header-elements #list li:nth-child(4) {
+      animation-name: bob-4;
+    }
+
+.header-elements #list li:nth-child(5) {
+      animation-name: bob-5;
+    }
+
+.header-elements #list li:nth-child(6) {
+      animation-name: bob-6;
+    }
 
 .header-elements #list li #senior-design::before {
       content: "Senior Design";
     }
 
 .header-elements #list li #cyplanner::before,
-    .header-elements #list li #magic-tower::before {
+    .header-elements #list li #magic-tower::before,
+    .header-elements #list li #Project3::before {
       content: "Project";
     }
 
@@ -150,6 +192,86 @@ ul {
 .header-elements #list li a:not(.active):hover::before {
             transform: translate(calc(-100% - 10px), 8%);
           }
+
+@keyframes bob-1 {
+  0%, 3%, 97%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  35% {
+    transform: translate(0, -6px);
+  }
+  
+  65% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-2 {
+  0%, 6%, 94%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  38% {
+    transform: translate(0, -6px);
+  }
+  
+  62% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-3 {
+  0%, 9%, 91%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  41% {
+    transform: translate(0, -6px);
+  }
+  
+  59% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-4 {
+  0%, 12%, 88%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  44% {
+    transform: translate(0, -6px);
+  }
+  
+  56% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-5 {
+  0%, 15%, 85%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  47% {
+    transform: translate(0, -6px);
+  }
+  
+  53% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-6 {
+  0%, 18%, 82%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  50% {
+    transform: translate(0, -6px);
+  }
+}
 
 .popouts {
   
@@ -302,15 +424,15 @@ img {
 }
 
 .warning > h1 {
-    font-size: 4vw;
+    font-size: 1rem;
     text-align: center;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
 .warning .text {
-  width: 100vw;
-  height: 100px;
+  width: min(100vw, 800px);
+  height: 50px;
   display: grid;
   place-content: center;
   overflow: hidden;
@@ -320,7 +442,7 @@ img {
 
 .warning .text h1 {
       width: 100%;
-      font-size: 5vw;
+      font-size: 1.2rem;
       overflow: hidden;
       margin: auto;
       position: absolute;
@@ -352,21 +474,21 @@ img {
       }
 
 .warning .text h1:nth-child(5) {
-        font-size: 4vw;
+        font-size: 0.95rem;
       }
 
 .warning .text h1:nth-child(6) {
-        font-size: 4vw;
+        font-size: 1rem;
       }
 
 @keyframes textSlide {
   0%, 100% {
-    transform: translate(0, -120px);
+    transform: translate(0, -60px);
     opacity: 0;
   }
   
   50% {
-    transform: translate(0, 120px);
+    transform: translate(0, 60px);
     opacity: 0;
   }
   51% {
