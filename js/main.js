@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const content = document.querySelector('.header-elements');
   const close = document.querySelector('.close');
   let last;
+  let source;
   let active = false;
 
   document.getElementById('list').onclick = function (evt) {
