@@ -11,7 +11,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #ffffffff;
+  background: #fffffffc;
   transition: all 0.5s;
 }
 
@@ -36,7 +36,8 @@ body {
     }
 
 .ocean .wave:nth-of-type(3) {
-      animation: wave 8s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.2s infinite, swell 8s ease -1.25s infinite;
+      animation: wave 8s cubic-bezier(0.75, 0.5, 0.5, 0.75) -0.125s infinite, swell-2 8s ease -1.25s infinite;
+      opacity: 0.5;
     }
 
 @keyframes wave {
@@ -49,6 +50,17 @@ body {
 }
 
 @keyframes swell {
+  0%, 100% {
+    transform: scaleY(0.95);
+    top: calc(-198px + 9.9px);
+  }
+  50% {
+    transform: scaleY(1.05);
+    top: calc(-198px - 9.9px);
+  }
+}
+
+@keyframes swell-2 {
   0%, 100% {
     transform: scaleY(0.95);
     top: calc(-198px + 9.9px);
@@ -481,7 +493,7 @@ img {
     display: block;
   }
 
-@media all and (min-height: 800px) and (min-aspect-ratio: 6/5)  {
+@media all and (min-width: 600px) and (min-aspect-ratio: 6/5)  {
   main .warning {
     display: none;
   }
@@ -497,19 +509,19 @@ img {
 }
 
 .warning > h1 {
-    font-size: 3vw;
+    font-size: min(3vw, 28px);
     text-align: center;
     width: 100%;
     margin-top: 40px;
   }
 
 .warning > h1:not(.first){
-      font-size: 2.5vw;
+      font-size: min(2.5vw, 24px);
       margin-top: 0px;
     }
 
 .warning .text {
-  width: min(100vw, 800px);
+  width: min(calc(100vw), 800px);
   height: 100px;
   display: grid;
   place-content: center;
@@ -520,7 +532,7 @@ img {
 
 .warning .text h1 {
       width: 100%;
-      font-size: 4vw;
+      font-size: min(4vw, 32px);
       overflow: hidden;
       margin: auto;
       position: absolute;
@@ -545,12 +557,12 @@ img {
 
 .warning .text h1:nth-child(5) {
         animation-delay: 0;
-        font-size: 3vw;
+        font-size: min(3vw, 28px);
       }
 
 .warning .text h1:nth-child(6) {
         animation-delay: -5s;
-        font-size: 3vw;
+        font-size: min(3vw, 28px);
       }
 
 @keyframes textSlide {
