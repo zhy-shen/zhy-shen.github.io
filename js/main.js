@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector('.header');
   const content = document.querySelector('.header-elements');
   const close = document.querySelector('.close');
+  const ocean = document.querySelector('.ocean');
   let last;
   let source;
   let active = false;
@@ -18,8 +19,9 @@ window.addEventListener("DOMContentLoaded", () => {
       if (document.querySelector('.' + className + '.popout') !== null) {
         document.querySelector('.' + className + '.popout').classList.add('visible');
         content.classList.add('panel-open');
-        header.style.background = source.getAttribute('data-color');
         close.classList.add('panel-open');
+        ocean.classList.add('panel-open');
+        header.style.background = source.getAttribute('data-color');
         active = true;
         last = source;
       }
@@ -29,6 +31,8 @@ window.addEventListener("DOMContentLoaded", () => {
       header.style.background = '#4285f4';
       document.querySelector('.' + className + '.popout').classList.remove('visible');
       content.classList.remove('panel-open');
+      close.classList.remove('panel-open');
+      ocean.classList.remove('panel-open');      
       active = false;
     } else if ((source.tagName == 'LI' || source.tagName == 'UL' || source.classList.contains('header-inner')) && active) {
       last.classList.remove('active');
@@ -36,6 +40,8 @@ window.addEventListener("DOMContentLoaded", () => {
       header.style.background = '#4285f4';
       document.querySelector('.' + className + '.popout').classList.remove('visible');
       content.classList.remove('panel-open');
+      close.classList.remove('panel-open');
+      ocean.classList.remove('panel-open');
       active = false;
     } else if (source.tagName == 'A') {
       last.classList.remove('active');
@@ -55,6 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
       document.querySelector('.' + className + '.popout').classList.remove('visible');
       content.classList.remove('panel-open');
       close.classList.remove('panel-open');
+      ocean.classList.remove('panel-open');
     }
   };
 });
