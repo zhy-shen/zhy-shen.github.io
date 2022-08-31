@@ -5,11 +5,12 @@ window.addEventListener("DOMContentLoaded", () => {
   const content = document.querySelector('.header-elements');
   const close = document.querySelector('.close');
   const ocean = document.querySelector('.ocean');
+  const enter = document.querySelector('.enter');
   let last;
   let source;
   let active = false;
 
-  document.getElementById('list').onclick = function (evt) {
+  document.getElementById('list').onclick = function(evt) {
     source = evt.srcElement;
 
     if (!content.classList.contains('panel-open')) {
@@ -32,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
       document.querySelector('.' + className + '.popout').classList.remove('visible');
       content.classList.remove('panel-open');
       close.classList.remove('panel-open');
-      ocean.classList.remove('panel-open');      
+      ocean.classList.remove('panel-open');
       active = false;
     } else if ((source.tagName == 'LI' || source.tagName == 'UL' || source.classList.contains('header-inner')) && active) {
       last.classList.remove('active');
@@ -53,7 +54,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  close.onclick = function (evt) {
+  close.onclick = function(evt) {
     if (active) {
       last.classList.remove('active');
       let className = last.id;
@@ -63,5 +64,9 @@ window.addEventListener("DOMContentLoaded", () => {
       close.classList.remove('panel-open');
       ocean.classList.remove('panel-open');
     }
+  };
+
+  enter.onclick = function(evt) {
+    document.querySelector('.warning').classList.toggle('inactive');
   };
 });
