@@ -1,7 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
+.codepen{
+  transform: scale(0.5) !important;
+}
+
 body {
   margin: 0;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
   overflow: hidden;
 }
 
@@ -504,7 +513,7 @@ img {
   place-content: center;
   z-index: 50;
   position: fixed;
-  background-image: linear-gradient(to bottom right, #00000000 49.5%, red 50%);
+  background-image: linear-gradient(to bottom right, #00000000 49.5%, #ff605d 50%);
   background-size: 200% 200%;
   background-position: bottom right;
   animation-fill-mode: forwards;
@@ -513,7 +522,7 @@ img {
 }
 
 .warning.inactive {
-    animation: warningHide 0.5s;
+    animation: warningHide 0.5s ease-in-out;
     animation-fill-mode: forwards;
     pointer-events: none;
   }
@@ -585,8 +594,8 @@ img {
 
 .warning h1.enter {
     margin-top: 40px;
-    padding: 20px 0px;
-    width: 200px;
+    padding: min(3vw, 20px) 0px;
+    width: min(200px, 40vw);
     justify-self: center;
     border-radius: 5em;
     background-image: linear-gradient(to bottom right, white 49.5%, #ffffff80 50%);
