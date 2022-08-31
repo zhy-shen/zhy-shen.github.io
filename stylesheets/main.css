@@ -1,9 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
-.codepen{
-  transform: scale(0.5) !important;
-}
-
 body {
   margin: 0;
   overflow: hidden;
