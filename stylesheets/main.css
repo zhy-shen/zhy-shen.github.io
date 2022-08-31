@@ -340,7 +340,10 @@ ul {
 }
 
 .popouts {
-  
+  animation: bob 8s infinite -4.5s cubic-bezier(0.45, 0, 0.55, 1);
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
 
 .popout.about-me {
@@ -359,7 +362,7 @@ ul {
   width: 600px;
   padding: 25px;
   border-radius: 20px;
-  box-shadow: 3px 3px 3px #00000020;
+  box-shadow: 2px 2px 3px #00000020;
   height: auto;
   margin: auto;
   background: white;
