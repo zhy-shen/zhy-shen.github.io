@@ -500,7 +500,7 @@ img {
     display: block;
   }
 
-@media all and (min-width: 600px) and (min-aspect-ratio: 6/5)  {
+@media all and (min-width: 20px) and (min-aspect-ratio: 1/5)  {
   main .warning {
     display: none;
   }
