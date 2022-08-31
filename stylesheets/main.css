@@ -5,11 +5,6 @@ body {
   overflow: hidden;
 }
 
-main {
-  position: relative;
-  overflow: hidden;
-}
-
 .ocean {
   height: calc(50vh - 198px);
   width: 100%;
@@ -25,6 +20,7 @@ main {
   }
 
 .ocean .wave {
+    transition: all 0.5s;
     background: url(/img/wave.svg) repeat-x;
     position: absolute;
     top: -198px;
@@ -345,10 +341,7 @@ ul {
 }
 
 .popouts {
-  animation: bob 8s infinite -4.5s cubic-bezier(0.45, 0, 0.55, 1);
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  
 }
 
 .popout.about-me {
@@ -367,7 +360,7 @@ ul {
   width: 600px;
   padding: 25px;
   border-radius: 20px;
-  box-shadow: 2px 2px 3px #00000020;
+  box-shadow: 3px 3px 3px #00000020;
   height: auto;
   margin: auto;
   background: white;
@@ -500,7 +493,7 @@ img {
     display: block;
   }
 
-@media all and (min-width: 20px) and (min-aspect-ratio: 1/5)  {
+@media all and (min-width: 1200px) and (min-height: 800px)  {
   main .warning {
     display: none;
   }
@@ -511,15 +504,32 @@ img {
   place-content: center;
   z-index: 50;
   position: fixed;
-  background: red;
+  background-image: linear-gradient(to bottom right, #00000000 49.5%, red 50%);
+  background-size: 200% 200%;
+  background-position: bottom right;
+  animation-fill-mode: forwards;
+  transition: all 0.5s;
   inset: 0;
 }
+
+.warning.inactive {
+    animation: warningHide 0.5s;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+  }
+
+.warning.inactive .text,
+    .warning.inactive h1 {
+      opacity: 0;
+    }
 
 .warning > h1 {
     font-size: min(3vw, 28px);
     text-align: center;
     width: 100%;
     margin-top: 40px;
+    opacity: 1;
+    transition: all 0.3s;
   }
 
 .warning > h1:not(.first){
@@ -528,6 +538,7 @@ img {
     }
 
 .warning .text {
+  opacity: 1;
   width: min(calc(100vw), 800px);
   height: 100px;
   display: grid;
@@ -572,12 +583,41 @@ img {
         font-size: min(3vw, 28px);
       }
 
+.warning h1.enter {
+    margin-top: 40px;
+    padding: 20px 0px;
+    width: 200px;
+    justify-self: center;
+    border-radius: 5em;
+    background-image: linear-gradient(to bottom right, white 49.5%, #ffffff80 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    animation-fill-mode: forwards;
+    transition: all 0.2s;
+  }
+
+.warning h1.enter:hover {
+      background-position: top left;
+      transform: translate(-5px, -3px);
+      filter: drop-shadow(2px 2px 1px #00000040);
+      font-weight: bold;
+    }
+
+@keyframes warningHide {
+  0% {
+    background-position: bottom right;
+    opacity: 1;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
 @keyframes textSlide {
   0%, 100% {
     transform: translate(0, -120px);
     opacity: 0;
   }
-  
   50% {
     transform: translate(0, 120px);
     opacity: 0;
