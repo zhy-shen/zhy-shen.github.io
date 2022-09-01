@@ -10,6 +10,11 @@ main {
   overflow: hidden;
 }
 
+.cp_embed_wrapper > iframe {
+  width: 600px !important;
+  border-radius: 10px;
+}
+
 .ocean {
   height: calc(50vh - 198px);
   width: 100%;
