@@ -346,7 +346,10 @@ ul {
 }
 
 .popouts {
-  
+  animation: bob 8s infinite -4.5s cubic-bezier(0.45, 0, 0.55, 1);
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
 
 .popout.about-me {
