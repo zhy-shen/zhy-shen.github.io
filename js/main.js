@@ -1,6 +1,12 @@
 "use strict";
 
 window.addEventListener("DOMContentLoaded", () => {
+  var isChromium = !!navigator.userAgentData && navigator.userAgentData.brands.some(data => data.brand == 'Chromium');
+
+  if (!isChromium) {
+    document.querySelector('.browserwarning').classList.add('notchrome');
+  }
+
   const header = document.querySelector('.header');
   const content = document.querySelector('.header-elements');
   const close = document.querySelector('.close');
@@ -10,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let source;
   let active = false;
 
-  document.getElementById('list').onclick = function(evt) {
+  document.getElementById('list').onclick = function (evt) {
     source = evt.srcElement;
 
     if (!content.classList.contains('panel-open')) {
@@ -54,7 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  close.onclick = function(evt) {
+  close.onclick = function (evt) {
     if (active) {
       last.classList.remove('active');
       let className = last.id;
@@ -66,7 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  enter.onclick = function(evt) {
+  enter.onclick = function (evt) {
     document.querySelector('.warning').classList.toggle('inactive');
   };
 });
