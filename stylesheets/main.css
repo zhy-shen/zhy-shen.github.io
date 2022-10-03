@@ -181,29 +181,26 @@ ul {
     animation-delay: -2s;
   }
 
-.header-elements #list li:first-child {
+/*
+    &:first-child {
       animation-name: bob-1;
     }
-
-.header-elements #list li:nth-child(2) {
+    &:nth-child(2) {
       animation-name: bob-2;
     }
-
-.header-elements #list li:nth-child(3) {
+    &:nth-child(3) {
       animation-name: bob-3;
     }
-
-.header-elements #list li:nth-child(4) {
+    &:nth-child(4) {
       animation-name: bob-4;
     }
-
-.header-elements #list li:nth-child(5) {
+    &:nth-child(5) {
       animation-name: bob-5;
     }
-
-.header-elements #list li:nth-child(6) {
+    &:nth-child(6) {
       animation-name: bob-6;
     }
+    */
 
 .header-elements #list li #senior-design::before {
       content: "Senior Design";
@@ -215,7 +212,9 @@ ul {
       content: "Project";
     }
 
-.header-elements #list li #ethics::before,
+.header-elements #list li #core::before,
+    .header-elements #list li #gen-ed::before,
+    .header-elements #list li #ethics::before,
     .header-elements #list li #about-me::before {
       content: "Other";
     }
@@ -506,10 +505,14 @@ img {
     display: block;
   }
 
-@media all and (min-width: 1200px) and (min-height: 800px)  {
+@media all and (min-width: 1200px) or (min-height: 800px)  {
   main .warning {
     display: none;
   }
+}
+
+main .warning {
+   display: none;
 }
 
 .warning {
