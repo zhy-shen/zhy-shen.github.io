@@ -384,6 +384,12 @@ ul {
     user-select: initial;
   }
 
+.essay {
+  max-height: 550px;
+  overflow-y: auto;
+  line-height: 140%;
+}
+
 .popout {
   transition: opacity 0.3s, transform 0.4s, scale 0.5s;
   opacity: 0;
@@ -407,7 +413,7 @@ ul {
 
 .popout.visible {
     pointer-events: initial;
-    z-index: 20;
+    z-index: 2000000;
     opacity: 1;
     transform: translate(-10%, -50%) scale(1);
     transition: opacity 0.4s, transform 0.5s, scale 0.5s;
