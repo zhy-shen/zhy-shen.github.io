@@ -29,8 +29,13 @@ main {
 }
 
 .cp_embed_wrapper > iframe {
-  width: 600px !important;
+  width: 750px !important;
+  height: 640px !important;
   border-radius: 10px;
+  transform: scale(0.8);
+  margin-left: -75px;
+  margin-top: -40px;
+  margin-bottom: -40px;
 }
 
 .ocean {
@@ -99,11 +104,19 @@ main {
   }
 }
 
+h1 {
+  margin: 0.3em 0;
+}
+
 h1,
 a,
 p {
   font-family: 'Raleway', sans-serif;
   user-select: none;
+}
+
+.name {
+  text-align: center;
 }
 
 .jp {
@@ -520,11 +533,11 @@ img {
 
 @keyframes bob {
   0%, 100% {
-    transform: translate(0, 15px);
+    transform: translate(0, 10px);
   }
   
   50% {
-    transform: translate(0, -15px);
+    transform: translate(0, -10px);
   }
 }
 
@@ -541,14 +554,10 @@ img {
     display: block;
   }
 
-@media all and (min-width: 1200px) or (min-height: 800px)  {
+@media (min-width: 1200px) and (min-height: 400px)  {
   main .warning {
     display: none;
   }
-}
-
-main .warning {
-   display: grid;
 }
 
 .warning {
@@ -557,7 +566,7 @@ main .warning {
   z-index: 50;
   position: fixed;
   background-image: linear-gradient(to bottom right, #00000000 49.5%, #ff605d 50%);
-  background-size: 200% 200%;
+  background-size: 220% 220%;
   background-position: bottom right;
   animation-fill-mode: forwards;
   transition: all 0.5s;
