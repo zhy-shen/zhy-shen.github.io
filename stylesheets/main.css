@@ -548,7 +548,7 @@ img {
 }
 
 main .warning {
-   display: none;
+   display: grid;
 }
 
 .warning {
