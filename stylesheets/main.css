@@ -189,6 +189,10 @@ ul {
           font-weight: bold;
         }
 
+.header-elements #list {
+    margin-left: 88px;
+  }
+
 .header-elements #list li {
     transition: transform 0.5s, filter 0.5s, background 0.2s;
     padding: 8px 15px;
@@ -375,13 +379,21 @@ ul {
 }
 
 .popout.about-me {
-  z-index: 20;
   pointer-events: initial;
 }
 
 .popout.about-me a, 
   .popout.about-me p {
     user-select: initial;
+  }
+
+.popout.about-me .cp_embed_wrapper iframe {
+    max-height: 0px !important;
+    transition: all 0.4s;
+  }
+
+.popout.about-me.visible .cp_embed_wrapper iframe {
+    max-height: 400px !important;
   }
 
 .essay {
