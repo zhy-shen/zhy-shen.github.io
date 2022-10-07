@@ -721,13 +721,13 @@ img {
   }
 }
 
-.text > div {
+.about-me .text > div {
     display:flex;
     flex-direction: row;
     place-content: space-between;
 }
 
-.text > div > div {
+.about-me .text > div > div {
     display: flex;
   }
 
