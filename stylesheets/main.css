@@ -1,23 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
-.browserwarning {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 10000;
-  display: none;
-  padding: 20px;
-  filter: drop-shadow(2px 2px 1px #00000040);
-}
-
-.browserwarning.notchrome {
-    display: block;
-  }
-
-.browserwarning p {
-    margin: 0;
-  }
-
 body {
   margin: 0;
   overflow: hidden;
@@ -28,91 +10,25 @@ main {
   overflow: hidden;
 }
 
-.cp_embed_wrapper > iframe {
-  width: 750px !important;
-  height: 640px !important;
-  border-radius: 10px;
-  transform: scale(0.8);
-  margin-left: -75px;
-  margin-top: -40px;
-  margin-bottom: -40px;
-}
-
-.ocean {
-  height: calc(50vh - 198px);
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #ffffffff;
-  transition: all 2s;
-}
-
-.ocean.panel-open {
-    bottom: -200px;
-  }
-
-.ocean .wave {
-    transition: all 0.5s;
-    background: url(/img/wave.svg) repeat-x;
-    position: absolute;
-    top: -198px;
-    width: 6400px;
-    height: 198px;
-    animation: wave 8s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-    filter: saturate(0) brightness(1000%);
-    opacity: 1;
-  }
-
-.ocean .wave:nth-of-type(2) {
-      animation: wave 8s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 8s ease -1.25s infinite;
-    }
-
-.ocean .wave:nth-of-type(3) {
-      animation: wave 8s cubic-bezier(0.75, 0.5, 0.5, 0.75) -0.125s infinite, swell-2 8s ease -1.25s infinite;
-      opacity: 0.5;
-    }
-
-@keyframes wave {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -1600px;
-  }
-}
-
-@keyframes swell {
-  0%, 100% {
-    transform: scaleY(0.95);
-    top: calc(-198px + 9.9px);
-  }
-  50% {
-    transform: scaleY(1.05);
-    top: calc(-198px - 9.9px);
-  }
-}
-
-@keyframes swell-2 {
-  0%, 100% {
-    transform: scaleY(0.95);
-    top: calc(-198px + 9.9px);
-  }
-  50% {
-    transform: scaleY(1.05);
-    top: calc(-198px - 9.9px);
-  }
-}
-
 h1 {
   margin: 0.3em 0;
 }
 
 h1,
+h2,
 a,
 p {
   font-family: 'Raleway', sans-serif;
   user-select: none;
+}
+
+p {
+  line-height: 140%;
+}
+
+.essay {
+  max-height: 550px;
+  overflow-y: auto;
 }
 
 .name {
@@ -304,85 +220,58 @@ ul {
             transform: translate(calc(-100% - 10px), 8%);
           }
 
-@keyframes bob-1 {
-  0%, 3%, 97%, 100% {
-    transform: translate(0, 6px);
-  }
-  
-  35% {
-    transform: translate(0, -6px);
-  }
-  
-  65% {
-    transform: translate(0, -6px);
-  }
+.browserwarning {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  display: none;
+  padding: 20px;
+  filter: drop-shadow(2px 2px 1px #00000040);
 }
 
-@keyframes bob-2 {
-  0%, 6%, 94%, 100% {
-    transform: translate(0, 6px);
+.browserwarning.notchrome {
+    display: block;
   }
-  
-  38% {
-    transform: translate(0, -6px);
+
+.browserwarning p {
+    margin: 0;
   }
-  
-  62% {
-    transform: translate(0, -6px);
-  }
+
+.ocean {
+  height: calc(50vh - 198px);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #ffffffff;
+  transition: all 2s;
 }
 
-@keyframes bob-3 {
-  0%, 9%, 91%, 100% {
-    transform: translate(0, 6px);
+.ocean.panel-open {
+    bottom: -200px;
   }
-  
-  41% {
-    transform: translate(0, -6px);
-  }
-  
-  59% {
-    transform: translate(0, -6px);
-  }
-}
 
-@keyframes bob-4 {
-  0%, 12%, 88%, 100% {
-    transform: translate(0, 6px);
+.ocean .wave {
+    transition: all 0.5s;
+    background: url(/img/wave.svg) repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 8s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    filter: saturate(0) brightness(1000%);
+    opacity: 1;
   }
-  
-  44% {
-    transform: translate(0, -6px);
-  }
-  
-  56% {
-    transform: translate(0, -6px);
-  }
-}
 
-@keyframes bob-5 {
-  0%, 15%, 85%, 100% {
-    transform: translate(0, 6px);
-  }
-  
-  47% {
-    transform: translate(0, -6px);
-  }
-  
-  53% {
-    transform: translate(0, -6px);
-  }
-}
+.ocean .wave:nth-of-type(2) {
+      animation: wave 8s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 8s ease -1.25s infinite;
+    }
 
-@keyframes bob-6 {
-  0%, 18%, 82%, 100% {
-    transform: translate(0, 6px);
-  }
-  
-  50% {
-    transform: translate(0, -6px);
-  }
-}
+.ocean .wave:nth-of-type(3) {
+      animation: wave 8s cubic-bezier(0.75, 0.5, 0.5, 0.75) -0.125s infinite, swell-2 8s ease -1.25s infinite;
+      opacity: 0.5;
+    }
 
 .popouts {
   animation: bob 8s infinite -4.5s cubic-bezier(0.45, 0, 0.55, 1);
@@ -403,16 +292,23 @@ ul {
 .popout.about-me .cp_embed_wrapper iframe {
     max-height: 0px !important;
     transition: all 0.4s;
+    opacity: 0;
   }
 
 .popout.about-me.visible .cp_embed_wrapper iframe {
-    max-height: 400px !important;
+    max-height: 512px !important;
+    opacity: 1;
   }
 
-.essay {
-  max-height: 550px;
-  overflow-y: auto;
-  line-height: 140%;
+.cp_embed_wrapper > iframe {
+  width: 750px !important;
+  height: 640px !important;
+  border-radius: 10px;
+  transform: scale(0.8);
+  margin-left: -75px;
+  margin-right: -75px;
+  margin-top: -50px;
+  margin-bottom: -52px;
 }
 
 .popout {
@@ -508,38 +404,6 @@ img {
 .visible .gallery img:nth-child(3) {
     animation-delay: -3s;
   }
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  33% {
-    opacity: 1;
-  }
-
-  53% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes bob {
-  0%, 100% {
-    transform: translate(0, 10px);
-  }
-  
-  50% {
-    transform: translate(0, -10px);
-  }
-}
 
 .close {
   display: none;
@@ -712,3 +576,178 @@ img {
     background-position: 0%;
   }
 }
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  53% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: scaleY(0.95);
+    top: calc(-198px + 9.9px);
+  }
+  50% {
+    transform: scaleY(1.05);
+    top: calc(-198px - 9.9px);
+  }
+}
+
+@keyframes swell-2 {
+  0%, 100% {
+    transform: scaleY(0.95);
+    top: calc(-198px + 9.9px);
+  }
+  50% {
+    transform: scaleY(1.05);
+    top: calc(-198px - 9.9px);
+  }
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform: translate(0, 10px);
+  }
+  
+  50% {
+    transform: translate(0, -10px);
+  }
+}
+
+@keyframes bob-1 {
+  0%, 3%, 97%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  35% {
+    transform: translate(0, -6px);
+  }
+  
+  65% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-2 {
+  0%, 6%, 94%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  38% {
+    transform: translate(0, -6px);
+  }
+  
+  62% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-3 {
+  0%, 9%, 91%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  41% {
+    transform: translate(0, -6px);
+  }
+  
+  59% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-4 {
+  0%, 12%, 88%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  44% {
+    transform: translate(0, -6px);
+  }
+  
+  56% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-5 {
+  0%, 15%, 85%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  47% {
+    transform: translate(0, -6px);
+  }
+  
+  53% {
+    transform: translate(0, -6px);
+  }
+}
+
+@keyframes bob-6 {
+  0%, 18%, 82%, 100% {
+    transform: translate(0, 6px);
+  }
+  
+  50% {
+    transform: translate(0, -6px);
+  }
+}
+
+.text > div {
+    display:flex;
+    flex-direction: row;
+    place-content: space-between;
+}
+
+.text > div > div {
+    display: flex;
+  }
+
+.button {
+    margin: auto 10px;
+    padding: 10px 20px;
+    justify-self: center;
+    border-radius: 5em;
+    background-image: linear-gradient(to bottom right, #e1bd5d 49.5%, #e8cd83 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    animation-fill-mode: forwards;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: white;
+}
+
+.button:hover {
+      background-position: top left;
+      transform: translate(-2px, -1px);
+      filter: drop-shadow(2px 2px 1px #00000040);
+      font-weight: bold;
+    }
