@@ -165,8 +165,12 @@ ul {
 
 .header-elements #list li #core::before,
     .header-elements #list li #gen-ed::before,
-    .header-elements #list li #ethics::before,
-    .header-elements #list li #about-me::before {
+    .header-elements #list li #ethics::before{
+      content: "Essay";
+    }
+
+.header-elements #list li #about-me::before,
+    .header-elements #list li #site-info::before {
       content: "Other";
     }
 
@@ -302,7 +306,7 @@ ul {
 
 .cp_embed_wrapper > iframe {
   width: 750px !important;
-  height: 640px !important;
+  height: 480px !important;
   border-radius: 10px;
   transform: scale(0.8);
   margin-left: -75px;
@@ -343,6 +347,7 @@ ul {
 .popout .popup-list {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
   }
 
 .popout .popup-list li {
@@ -355,6 +360,7 @@ ul {
     }
 
 .popout .popup-list li a {
+        font-weight: bold;
         font-size: 12px;
       }
 
@@ -427,7 +433,7 @@ img {
 .warning {
   display: grid;
   place-content: center;
-  z-index: 50;
+  z-index: 200;
   position: fixed;
   background-image: linear-gradient(to bottom right, #00000000 49.5%, #ff605d 50%);
   background-size: 220% 220%;
