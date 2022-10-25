@@ -336,6 +336,10 @@ ul {
   overflow: visible;
 }
 
+.popout * {
+    pointer-events: none;
+  }
+
 .popout.visible {
     pointer-events: initial;
     z-index: 2000000;
@@ -343,6 +347,10 @@ ul {
     transform: translate(-10%, -50%) scale(1);
     transition: opacity 0.4s, transform 0.5s, scale 0.5s;
   }
+
+.popout.visible * {
+      pointer-events: initial;
+    }
 
 .popout .popup-list {
     display: flex;
