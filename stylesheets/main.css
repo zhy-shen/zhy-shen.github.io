@@ -50,6 +50,10 @@ ul {
   place-content: center;
 }
 
+.counter {
+  //display: none;
+}
+
 .header {
   display: grid;
   background: #4285f4;
@@ -71,27 +75,21 @@ ul {
 }
 
 .header-elements .header-inner {
-    transition: transform 0.5s, background 0.5s;
+    transition: transform 0.5s, filter 0.5s, background 0.25s, backdrop-filter 0.5s, box-shadow 0.25s;
     pointer-events: initial;
     padding: 40px;
     border-radius: 35px;
-  }
-
-.header-elements.panel-open {
-    transition: transform 0.5s, filter 0.5s, background 0.2s;
   }
 
 .header-elements.panel-open .header-inner {
       transform: translateX(-80%) rotateY(30deg);
     }
 
-.header-elements.panel-open #list li {
-      
-    }
-
 .header-elements:not(.panel-open) .header-inner {
       background: #ffffff30;
       padding: 40px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0px 0px 5px #00000015;
     }
 
 .header-elements:not(.panel-open) #list li {
@@ -321,19 +319,19 @@ ul {
   width: 600px;
   padding: 25px;
   border-radius: 20px;
-  box-shadow: 3px 3px 3px #00000020;
   height: auto;
   margin: auto;
-  background: white;
   display: block;
   pointer-events: none;
   position: fixed;
   top: 50%;
+  background: #ffffff60;
   left: 50%;
   transform: translate(20%, -50%) scale(0.9);
   display: flex;
   gap: 20px;
   overflow: visible;
+  transition: opacity 0.4s, transform 0.5s, scale 0.5s, backdrop-filter 0.5s, box-shadow 0.5s;
 }
 
 .popout * {
@@ -345,7 +343,8 @@ ul {
     z-index: 2000000;
     opacity: 1;
     transform: translate(-10%, -50%) scale(1);
-    transition: opacity 0.4s, transform 0.5s, scale 0.5s;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 5px #00000015;
   }
 
 .popout.visible * {
